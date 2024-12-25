@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENESTAR SALUDABLE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>RECOMENDACIONES SEGUN TU PESO Y TALLA</h1>
+
+    <!-- Personal Data Section -->
+    <div class="section" id="personalDataSection">
+        <h2>Ingresa tus Datos Personales</h2>
+        <form id="personalDataForm">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required><br><br>
+            <label for="age">Edad (1-65 años):</label>
+            <input type="number" id="age" min="1" max="65" required><br><br>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" required><br><br>
+            <label for="phone">Celular:</label>
+            <input type="tel" id="phone" required><br><br>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" required><br><br>
+            <button type="submit">Continuar</button>
+        </form>
+    </div>
+
+    <!-- Weight and Height Section -->
+    <div class="section hidden" id="bmiSection">
+        <h2>Para saber tu IMC ingresa tu Peso y Altura</h2>
+        <form id="bmiForm">
+            <label for="weight">Peso (kg):</label>
+            <input type="number" id="weight" required><br><br>
+            <label for="height">Altura (m):</label>
+            <input type="number" step="0.01" id="height" required><br><br>
+            <button type="submit">Calcular IMC</button>
+        </form>
+        <div class="navigation">
+            <button onclick="goBackToPersonalData()">Retroceder</button>
+        </div>
+    </div>
+
+    <!-- BMI Result Section -->
+    <div class="section hidden" id="bmiResultSection">
+        <h2>Resultado del IMC</h2>
+        <div class="result" id="bmiResult"></div>
+        <div class="navigation">
+            <button onclick="goBackToBMI()">Retroceder</button>
+            <button onclick="showAdvice()">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Advice Section -->
+    <div class="section hidden" id="adviceSection">
+        <h2>Consejos de Salud</h2>
+        <div class="result" id="adviceResult"></div>
+        <div class="navigation">
+            <button onclick="goBackToBMIResult()">Retroceder</button>
+            <button onclick="showArticles()">Continuar</button>
+        </div>
+    </div>
+
+    <!-- Articles and Community Section -->
+    <div class="section hidden" id="articlesSection">
+        <h2>Artículos y Comunidad</h2>
+        <ul>
+            <li><a href="#">Cómo mantener un peso saludable</a></li>
+            <li><a href="#">Beneficios del ejercicio regular</a></li>
+            <li><a href="#">Alimentos que debes incluir en tu dieta</a></li>
+        </ul>
+        <p>Únete a nuestra comunidad para compartir tus experiencias y obtener apoyo.</p>
+        <button onclick="alert('Funcionalidad de comunidad próximamente')">Unirse a la Comunidad</button>
+        <div class="navigation">
+            <button onclick="goBackToAdvice()">Retroceder</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestión de Usuarios</h1>
+    <!-- Formulario para Crear/Actualizar Usuario -->
+    <form id="userForm">
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <input type="number" id="edad" placeholder="Edad" required>
+      <input type="text" id="dni" placeholder="DNI" required>
+      <input type="text" id="celular" placeholder="Celular" required>
+      <input type="email" id="correo_electronico" placeholder="Correo Electrónico" required>
+      <button type="submit">Guardar</button>
+    </form>
+
+    <!-- Tabla para Mostrar Usuarios -->
+    <table id="usersTable">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>DNI</th>
+          <th>Celular</th>
+          <th>Correo Electrónico</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas de usuarios se llenarán dinámicamente -->
+      </tbody>
+    </table>
+
+    <script src="script.js"></script> <!-- Incluye el archivo JavaScript aquí -->
+</body>
+</html>
